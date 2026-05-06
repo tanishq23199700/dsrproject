@@ -1,0 +1,44 @@
+DSR Group - Hostinger Deployment & Form Configuration Guide
+
+Deploying this website to Hostinger is incredibly straightforward. Since we used native HTML, CSS, JavaScript, and PHP, you do not need Node.js, React, or any complex build tools.
+
+=== STEP 1: UPLOAD FILES TO HOSTINGER ===
+1. Log in to your Hostinger Control Panel (hPanel).
+2. Go to "Websites" and click "Manage" on your domain (dsrprojects.co.in).
+3. Find the "File Manager" and open it.
+4. Navigate into the `public_html` directory.
+5. Upload all the files we created: 
+   - index.html
+   - styles.css
+   - script.js
+   - submit.php
+   (You can upload them by dragging and dropping them from your computer into the File Manager).
+
+=== STEP 2: CONFIGURE THE EMAIL SCRIPT (submit.php) ===
+To ensure emails are reliably sent and don't end up in spam, you need to update the `submit.php` file with your actual email addresses.
+
+1. In the Hostinger File Manager, right-click on `submit.php` and click "Edit".
+2. Find Line 17:
+   $recipient = "sales@dsrprojects.co.in";
+   Change this to the email address where you want to RECEIVE the leads (e.g., your personal inbox or sales team inbox).
+3. Find Line 28:
+   $headers = "From: leads@dsrprojects.co.in\r\n";
+   Change this to an email address that actually exists on your Hostinger account. 
+   (Hostinger mail servers will block emails if the 'From' address does not exist on your hosting account to prevent spam. Create an email account like leads@dsrprojects.co.in in your hPanel if you haven't already).
+4. Click "Save" in the top right corner.
+
+=== STEP 3: TEST YOUR FORMS ===
+1. Open your live website in a browser.
+2. Fill out the "Register Your Interest" form in the Hero section and click Submit.
+3. You should see a success popup.
+
+=== STEP 4: ACCESSING LEADS (CSV / EXCEL) ===
+In addition to the email notification, every form submission is automatically saved to a CSV file on your server.
+1. Log in to your Hostinger File Manager.
+2. Look for a file named `leads.csv` in the `public_html` folder.
+3. You can right-click and "Download" this file.
+4. Open the downloaded file in Microsoft Excel or Google Sheets to see all your leads in a clean table format.
+
+TROUBLESHOOTING:
+- If you don't receive the email, check your Spam folder.
+- If it is in Spam, you need to ensure SPF, DKIM, and DMARC records are set up in your Hostinger DNS zone. Hostinger has tools in hPanel to configure this automatically for Hostinger Email. Go to the "Emails" section in hPanel and follow the prompts.
