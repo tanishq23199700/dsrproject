@@ -594,6 +594,36 @@
     </svg>
   </a>
 
+  <!-- PROJECT MODAL -->
+  <div id="project-modal" class="modal" aria-hidden="true">
+    <div class="modal-overlay"></div>
+    <div class="modal-container">
+      <button class="modal-close" aria-label="Close modal">&times;</button>
+      <div class="modal-content">
+        <div class="eyebrow">Enquire Now</div>
+        <h2 id="modal-project-name">Project Interest</h2>
+        <p>Please share your details below. Our sales team will get back to you with exclusive pricing and availability for this project.</p>
+        
+        <form id="project-lead-form" class="modal-form" data-netlify="true" name="project-enquiry" method="POST">
+          <input type="hidden" name="form-name" value="project-enquiry">
+          <input type="hidden" name="project_name" id="hidden-project-name">
+          
+          <div class="form-group">
+            <input type="text" name="name" placeholder="Full Name" required>
+          </div>
+          <div class="form-group">
+            <input type="tel" name="phone" placeholder="Phone Number" required>
+          </div>
+          <div class="form-group">
+            <input type="email" name="email" placeholder="Email Address" required>
+          </div>
+          
+          <button type="submit" class="btn btn-gold w-full">Request Details</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
   <script src="script.js"></script>
 </body>
 </html>

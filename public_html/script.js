@@ -171,4 +171,47 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // 9. PROJECT MODAL LOGIC
+  const projectModal = document.getElementById('project-modal');
+  const modalProjectName = document.getElementById('modal-project-name');
+  const hiddenProjectName = document.getElementById('hidden-project-name');
+  const modalClose = document.querySelector('.modal-close');
+  const modalOverlay = document.querySelector('.modal-overlay');
+
+  function openModal(projectName) {
+    modalProjectName.innerText = projectName;
+    hiddenProjectName.value = projectName;
+    projectModal.classList.add('active');
+    projectModal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden'; // Prevent scroll
+  }
+
+  function closeModal() {
+    projectModal.classList.remove('active');
+    projectModal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = ''; // Restore scroll
+  }
+
+  document.querySelectorAll('.project-card').forEach(card => {
+    card.addEventListener('click', (e) => {
+      const href = card.getAttribute('href');
+      // If it's not the DSR Address subpage, open modal
+      if (href !== 'address/' && href !== '/address') {
+        e.preventDefault();
+        const projectName = card.querySelector('.project-name').innerText;
+        openModal(projectName);
+      }
+    });
+  });
+
+  if (modalClose) modalClose.addEventListener('click', closeModal);
+  if (modalOverlay) modalOverlay.addEventListener('click', closeModal);
+
+  // Close on Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && projectModal.classList.contains('active')) {
+      closeModal();
+    }
+  });
+
 });
