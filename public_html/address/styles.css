@@ -1388,3 +1388,40 @@ footer a:hover {
     height: 300px !important;
   }
 }
+
+/* FORM UPDATES */
+.phone-group {
+  display: flex;
+  gap: 0;
+  border: 1px solid var(--border-light);
+  background: var(--bg-alt);
+  overflow: hidden;
+  transition: var(--transition);
+  margin-bottom: 16px;
+}
+
+.phone-group:focus-within {
+  border-color: var(--gold);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.country-code {
+  width: 90px;
+  padding: 0 10px;
+  background: transparent;
+  border: none;
+  border-right: 1px solid var(--border-light);
+  font-family: inherit;
+  font-size: 14px;
+  color: var(--charcoal);
+  cursor: pointer;
+  outline: none;
+}
+
+.phone-group input {
+  flex: 1;
+  border: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  margin-bottom: 0 !important;
+}

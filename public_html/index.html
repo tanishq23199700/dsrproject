@@ -129,8 +129,16 @@
               <div class="form-group">
                 <input type="text" name="name" placeholder="Full Name" required>
               </div>
-              <div class="form-group">
-                <input type="tel" name="phone" placeholder="Phone Number" required>
+              <div class="phone-group">
+                <select name="country_code" class="country-code" aria-label="Country Code">
+                  <option value="+91" selected>IN +91</option>
+                  <option value="+971">UAE +971</option>
+                  <option value="+1">USA +1</option>
+                  <option value="+44">UK +44</option>
+                  <option value="+65">SG +65</option>
+                  <option value="+966">KSA +966</option>
+                </select>
+                <input type="tel" name="phone" placeholder="Phone Number" pattern="[0-9]{10,15}" oninput="this.value = this.value.replace(/[^0-9]/g, '')" title="Please enter a valid phone number (digits only)" required>
               </div>
               <div class="form-group">
                 <input type="email" name="email" placeholder="Email Address" required>
@@ -648,8 +656,13 @@
     </div>
     
     <div class="footer-bottom">
-      <p>© 2025 DSR Group. All Rights Reserved. All projects RERA registered.</p>
-      <p>dsrprojects.co.in</p>
+      <div class="disclaimer" style="font-size: 10px; color: var(--text-muted); line-height: 1.6; margin-bottom: 24px; text-align: left;">
+        This website is run and maintained by an authorized channel partner (PRM/KA/RERA/1251/446/PR/130723/006056) of DSR Group. All plans, specifications, images, and other details of our projects herein are only indicative and for information purposes only and may be altered at any time at our sole discretion and as may be permitted under applicable laws including Real Estate Regulation and Development Act, 2016 and Rules and regulations notified thereunder. We endeavor to update this website as promptly as possible with all relevant information and details.
+      </div>
+      <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+        <p>© 2025 DSR Group. All Rights Reserved. All projects RERA registered.</p>
+        <p>dsrprojects.co.in</p>
+      </div>
     </div>
   </footer>
 
@@ -679,7 +692,17 @@
             <input type="text" name="name" placeholder="Full Name" required>
           </div>
           <div class="form-group">
-            <input type="tel" name="phone" placeholder="Phone Number" required>
+            <div class="phone-group">
+              <select name="country_code" class="country-code" aria-label="Country Code">
+                <option value="+91" selected>IN +91</option>
+                <option value="+971">UAE +971</option>
+                <option value="+1">USA +1</option>
+                <option value="+44">UK +44</option>
+                <option value="+65">SG +65</option>
+                <option value="+966">KSA +966</option>
+              </select>
+              <input type="tel" name="phone" placeholder="Phone Number" pattern="[0-9]{10,15}" oninput="this.value = this.value.replace(/[^0-9]/g, '')" title="Please enter a valid phone number (digits only)" required>
+            </div>
           </div>
           <div class="form-group">
             <input type="email" name="email" placeholder="Email Address" required>

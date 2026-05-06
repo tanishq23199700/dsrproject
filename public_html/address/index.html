@@ -160,7 +160,7 @@
         <div class="hero-content">
           <p class="section-eyebrow">Dommasandra · Whitefield–Sarjapur Road · Bengaluru</p>
           <h1>DSR Address: <br><em>Luxury 2, 3 & 4 BHK.</em></h1>
-          <p class="hero-sub">Luxury 2, 3 &amp; 4 BHK apartments across 13.67 acres. 6 iconic towers rising G+30 floors above Bengaluru's fastest-growing corridor.</p>
+          <p class="hero-sub">Luxury 2, 3 &amp; 4 BHK apartments across 13.67 acres. <strong>No Cost EMI &amp; Zero Pre-EMI Available.</strong> 6 iconic towers rising G+30 floors above Bengaluru's fastest-growing corridor.</p>
           <div class="hero-ctas">
             <a href="#pricing" class="btn-primary">Explore Pricing</a>
             <a href="#siteplan" class="btn-outline">View Site Plan</a>
@@ -172,7 +172,17 @@
             <h3>Register Your Interest</h3>
             <p>Get exclusive early access and pricing details.</p>
             <input type="text" name="name" placeholder="Full Name" required>
-            <input type="tel" name="phone" placeholder="Phone Number" required>
+            <div class="phone-group">
+              <select name="country_code" class="country-code" aria-label="Country Code">
+                <option value="+91" selected>IN +91</option>
+                <option value="+971">UAE +971</option>
+                <option value="+1">USA +1</option>
+                <option value="+44">UK +44</option>
+                <option value="+65">SG +65</option>
+                <option value="+966">KSA +966</option>
+              </select>
+              <input type="tel" name="phone" placeholder="Phone Number" pattern="[0-9]{10,15}" oninput="this.value = this.value.replace(/[^0-9]/g, '')" title="Please enter a valid phone number (digits only)" required>
+            </div>
             <input type="email" name="email" placeholder="Email Address" required>
             <button type="submit" class="btn-primary">Submit Details</button>
           </form>
@@ -401,6 +411,7 @@
           <p>Across 6 Towers</p>
           <p>13.67 Acres</p>
           <p>Zero Pre-EMI*</p>
+          <p>No Cost EMI*</p>
         </article>
       </div>
     </section>
@@ -976,9 +987,14 @@
         </div>
       </div>
     </div>
-    <div class="footer-bottom">
-      <span>© 2025 DSR Group. All rights reserved.</span>
-      <span>Developed by BUD</span>
+    <div class="footer-bottom" style="flex-direction: column; align-items: flex-start; gap: 24px;">
+      <div class="disclaimer" style="font-size: 10px; color: var(--muted); line-height: 1.6; max-width: 100%;">
+        This website is run and maintained by an authorized channel partner (PRM/KA/RERA/1251/446/PR/130723/006056) of DSR Group. All plans, specifications, images, and other details of our projects herein are only indicative and for information purposes only and may be altered at any time at our sole discretion and as may be permitted under applicable laws including Real Estate Regulation and Development Act, 2016 and Rules and regulations notified thereunder. We endeavor to update this website as promptly as possible with all relevant information and details.
+      </div>
+      <div style="display: flex; justify-content: space-between; width: 100%; border-top: 1px solid var(--border-light); padding-top: 16px;">
+        <span>© 2025 DSR Group. All rights reserved.</span>
+        <span>dsrprojects.co.in</span>
+      </div>
     </div>
   </footer>
 

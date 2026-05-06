@@ -600,3 +600,46 @@ footer { background: var(--text-main); color: var(--text-light); padding: 80px 5
 @media (max-width: 480px) {
   .awards-grid { grid-template-columns: 1fr; }
 }
+
+/* FORM UPDATES */
+.phone-group {
+  display: flex;
+  gap: 0;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  background: var(--bg-alt);
+  overflow: hidden;
+  transition: all var(--t-fast);
+  margin-bottom: 16px;
+}
+
+.phone-group:focus-within {
+  border-color: var(--gold);
+  background: var(--bg-surface);
+  box-shadow: var(--shadow-sm);
+}
+
+.country-code {
+  width: 90px;
+  padding: 0 10px;
+  background: transparent;
+  border: none;
+  border-right: 1px solid var(--border-light);
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: var(--text-main);
+  cursor: pointer;
+  outline: none;
+}
+
+.phone-group input {
+  flex: 1;
+  border: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  margin-bottom: 0 !important;
+}
+
+.modal-form .phone-group {
+  margin-bottom: 0; /* Let form-group handle it */
+}
