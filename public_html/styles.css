@@ -173,14 +173,29 @@ img { width: 100%; height: auto; display: block; object-fit: cover; }
 
 /* HERO */
 #hero {
-  position: relative; min-height: 100vh; padding: 120px 5% 60px;
-  display: flex; align-items: center; justify-content: center; overflow: hidden;
+  position: relative; 
+  min-height: 100vh; 
+  padding: 120px 5% 150px; /* Increased bottom padding to 150px to clear stats bar */
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  overflow: hidden;
 }
 .hero-bg-img {
   position: absolute; top: 0; left: 0; width: 100%; height: 100%;
   object-fit: cover; z-index: 0; opacity: 0.2; pointer-events: none;
 }
-.hero-grid { position: relative; z-index: 2; width: 100%; max-width: 1440px; margin: 0 auto; display: grid; grid-template-columns: 1fr 400px; gap: 80px; align-items: center; }
+.hero-grid { 
+  position: relative; 
+  z-index: 5; /* Increased to stay above stats if they overlap on very short screens */
+  width: 100%; 
+  max-width: 1440px; 
+  margin: 0 auto; 
+  display: grid; 
+  grid-template-columns: 1fr 400px; 
+  gap: 80px; 
+  align-items: center; 
+}
 .hero-content { max-width: 700px; }
 .hero-content h1 { margin-bottom: 24px; color: var(--text-main); }
 .hero-content h1 i { color: var(--gold); font-style: italic; }
@@ -192,7 +207,8 @@ img { width: 100%; height: auto; display: block; object-fit: cover; }
   position: absolute; bottom: 0; left: 0; width: 100%;
   display: flex; justify-content: space-around;
   padding: 32px 5%; border-top: 1px solid var(--border-light);
-  background: var(--glass-bg); backdrop-filter: var(--glass-blur); z-index: 3;
+  background: var(--glass-bg); backdrop-filter: var(--glass-blur); 
+  z-index: 4; /* Keeps it above background but below grid */
 }
 .stat-item { text-align: center; }
 .stat-num-row { display: flex; align-items: baseline; justify-content: center; gap: 4px; }
@@ -594,7 +610,9 @@ footer { background: var(--text-main); color: var(--text-light); padding: 80px 5
 
 @media (max-width: 1024px) {
   .awards-grid { grid-template-columns: repeat(2, 1fr); }
-  .sustainability-grid { grid-template-columns: 1fr; }
+  .sustainability-grid { grid-template-columns: 1fr !important; gap: 48px; }
+  .sust-image { order: -1 !important; }
+  .sust-content { padding-left: 0 !important; }
 }
 
 @media (max-width: 480px) {
