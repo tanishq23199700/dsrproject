@@ -1392,22 +1392,20 @@ footer a:hover {
 /* FORM UPDATES */
 .phone-group {
   display: flex;
+  align-items: stretch;
   gap: 0;
   border: 1px solid var(--border-light);
   background: var(--bg-alt);
   overflow: hidden;
   transition: var(--transition);
   margin-bottom: 16px;
-}
-
-.phone-group:focus-within {
-  border-color: var(--gold);
-  background: rgba(255, 255, 255, 0.08);
+  height: 52px;
 }
 
 .country-code {
-  width: 90px;
-  padding: 0 10px;
+  width: 85px;
+  min-width: 85px;
+  padding: 0 8px;
   background: transparent;
   border: none;
   border-right: 1px solid var(--border-light);
@@ -1416,6 +1414,8 @@ footer a:hover {
   color: var(--charcoal);
   cursor: pointer;
   outline: none;
+  -webkit-appearance: none;
+  appearance: none;
 }
 
 .phone-group input {

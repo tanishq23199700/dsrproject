@@ -604,6 +604,7 @@ footer { background: var(--text-main); color: var(--text-light); padding: 80px 5
 /* FORM UPDATES */
 .phone-group {
   display: flex;
+  align-items: stretch;
   gap: 0;
   border: 1px solid var(--border-light);
   border-radius: var(--radius-sm);
@@ -611,17 +612,13 @@ footer { background: var(--text-main); color: var(--text-light); padding: 80px 5
   overflow: hidden;
   transition: all var(--t-fast);
   margin-bottom: 16px;
-}
-
-.phone-group:focus-within {
-  border-color: var(--gold);
-  background: var(--bg-surface);
-  box-shadow: var(--shadow-sm);
+  height: 50px; /* Consistent height */
 }
 
 .country-code {
-  width: 90px;
-  padding: 0 10px;
+  width: 85px;
+  min-width: 85px;
+  padding: 0 8px;
   background: transparent;
   border: none;
   border-right: 1px solid var(--border-light);
@@ -630,6 +627,8 @@ footer { background: var(--text-main); color: var(--text-light); padding: 80px 5
   color: var(--text-main);
   cursor: pointer;
   outline: none;
+  -webkit-appearance: none;
+  appearance: none;
 }
 
 .phone-group input {
